@@ -1,0 +1,32 @@
+seed: 12315
+batch_size: 256  # 64
+epochs: 100
+input_dim: 36
+corruption: 32  # 32
+hidden_dim: 256   # 36
+nmb_prototypes: 12  # 12
+w_mode: anchor
+warm_up: 10
+swav_alpha: 0.4  # 0.4
+
+# swav
+temperature: 0.1
+aug_num: 2
+queue_length: 256  # 64
+
+# sinkhorn
+epsilon: 0.05
+sinkhorn_iterations: 5
+world_size: 1
+
+# optimizer
+clip: 0.25
+cos: True
+scheduler:
+    lr: 0.001
+    momentum: 0.9
+    weight_decay: 1e-4
+    cls: StepLR
+    args:
+      step_size: 200
+      gamma: 0.5
